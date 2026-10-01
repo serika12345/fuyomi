@@ -1,0 +1,137 @@
+@layer components {
+  .scrollArea {
+    width: 100%;
+    overflow-x: auto;
+    padding: var(--space-2) var(--space-1) var(--space-3);
+  }
+
+  .keyboard {
+    position: relative;
+    min-width: 43rem;
+    height: 13rem;
+    filter: drop-shadow(0 0.75rem 0.8rem rgba(24, 34, 31, 0.16));
+  }
+
+  .whiteKeys {
+    display: grid;
+    grid-template-columns: repeat(15, minmax(0, 1fr));
+    height: 100%;
+  }
+
+  .whiteKey {
+    position: relative;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    min-width: 0;
+    padding: var(--space-3) var(--space-1);
+    color: var(--app-ink-soft);
+    cursor: pointer;
+    background: linear-gradient(180deg, #ffffff, var(--piano-white));
+    border: 1px solid var(--gray-7);
+    border-radius: 0 0 var(--radius-2) var(--radius-2);
+    transition:
+      background-color 120ms ease,
+      box-shadow 120ms ease,
+      transform 120ms ease;
+  }
+
+  .whiteKey + .whiteKey {
+    border-left: 0;
+  }
+
+  .whiteKey:hover:not(:disabled) {
+    background: var(--piano-white-active);
+  }
+
+  .whiteKey:active:not(:disabled) {
+    transform: translateY(0.2rem);
+  }
+
+  .whiteKey:focus-visible {
+    z-index: 3;
+    outline: 0.2rem solid var(--teal-8);
+    outline-offset: -0.2rem;
+  }
+
+  .whiteKey:disabled {
+    cursor: default;
+    opacity: 1;
+  }
+
+  .whiteKey[data-answer-state="correct"] {
+    color: var(--green-12);
+    background: var(--green-3);
+    box-shadow: inset 0 -0.45rem 0 var(--answer-correct);
+  }
+
+  .whiteKey[data-answer-state="incorrect"] {
+    color: var(--red-12);
+    background: var(--red-3);
+    box-shadow: inset 0 -0.45rem 0 var(--answer-incorrect);
+  }
+
+  .marker {
+    min-height: 1.5rem;
+    font-size: var(--font-size-2);
+    font-weight: var(--font-weight-bold);
+  }
+
+  .blackKeys {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+  }
+
+  .blackKey {
+    position: absolute;
+    top: 0;
+    width: 4.2%;
+    height: 61%;
+    background: linear-gradient(100deg, #28332f, var(--piano-black) 70%);
+    border: 1px solid #0b100e;
+    border-radius: 0 0 var(--radius-2) var(--radius-2);
+    box-shadow: 0 0.45rem 0.5rem rgba(11, 16, 14, 0.28);
+    transform: translateX(-50%);
+  }
+
+  .blackKey[data-position="1"] {
+    left: 6.6667%;
+  }
+
+  .blackKey[data-position="2"] {
+    left: 13.3333%;
+  }
+
+  .blackKey[data-position="4"] {
+    left: 26.6667%;
+  }
+
+  .blackKey[data-position="5"] {
+    left: 33.3333%;
+  }
+
+  .blackKey[data-position="6"] {
+    left: 40%;
+  }
+
+  .blackKey[data-position="8"] {
+    left: 53.3333%;
+  }
+
+  .blackKey[data-position="9"] {
+    left: 60%;
+  }
+
+  .blackKey[data-position="11"] {
+    left: 73.3333%;
+  }
+
+  .blackKey[data-position="12"] {
+    left: 80%;
+  }
+
+  .blackKey[data-position="13"] {
+    left: 86.6667%;
+  }
+}

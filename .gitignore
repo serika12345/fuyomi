@@ -1,0 +1,10 @@
+.DS_Store
+.direnv/
+.vite/
+coverage/
+dist/
+node_modules/
+playwright-report/
+test-results/
+*.log
+*.tsbuildinfo

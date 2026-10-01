@@ -1,0 +1,165 @@
+@layer components {
+  .selection,
+  .practice,
+  .summary {
+    position: relative;
+    z-index: 1;
+    width: min(100%, 72rem);
+    min-height: 100vh;
+    margin: 0 auto;
+    padding: var(--space-8);
+  }
+
+  .selection {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: var(--space-8);
+  }
+
+  .heroCopy {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    max-width: 44rem;
+    gap: var(--space-3);
+  }
+
+  .clefGrid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: var(--space-5);
+  }
+
+  .clefCard {
+    min-height: 18rem;
+    background: var(--app-panel);
+    border: 1px solid var(--app-panel-border);
+    box-shadow: var(--app-shadow);
+  }
+
+  .clefCardCopy {
+    display: flex;
+    flex: 1 1 auto;
+    flex-direction: column;
+    gap: var(--space-2);
+  }
+
+  .practice {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: var(--space-5);
+  }
+
+  .practiceHeader {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    gap: var(--space-5);
+  }
+
+  .score {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    min-width: 5rem;
+  }
+
+  .practiceCard {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-5);
+    background: var(--app-panel);
+    border: 1px solid var(--app-panel-border);
+    box-shadow: var(--app-shadow);
+  }
+
+  .questionArea {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    gap: var(--space-3);
+  }
+
+  .prompt,
+  .feedback {
+    display: flex;
+    align-items: center;
+    min-height: 3.25rem;
+  }
+
+  .prompt {
+    justify-content: center;
+  }
+
+  .nextAction {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 2.75rem;
+  }
+
+  .summary {
+    display: grid;
+    place-items: center;
+  }
+
+  .summaryCard {
+    width: min(100%, 38rem);
+    padding: var(--space-8);
+    background: var(--app-panel);
+    border: 1px solid var(--app-panel-border);
+    box-shadow: var(--app-shadow);
+  }
+
+  .summaryHeading {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--space-2);
+    text-align: center;
+  }
+
+  .accuracy {
+    color: var(--teal-11);
+  }
+
+  .summaryStats {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(8rem, 1fr));
+    width: min(100%, 24rem);
+    overflow: hidden;
+    text-align: center;
+    background: var(--gray-2);
+    border: 1px solid var(--gray-5);
+    border-radius: var(--radius-4);
+  }
+
+  .summaryStats > div {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-1);
+    padding: var(--space-4);
+  }
+
+  .summaryStats > div + div {
+    border-left: 1px solid var(--gray-5);
+  }
+
+  @media (max-width: 62rem) {
+    .selection,
+    .practice,
+    .summary {
+      padding: var(--space-6);
+    }
+
+    .clefGrid {
+      gap: var(--space-3);
+    }
+
+    .clefCard {
+      min-height: 19rem;
+    }
+  }
+}
